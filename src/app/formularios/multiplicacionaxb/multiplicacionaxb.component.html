@@ -1,0 +1,13 @@
+
+<div>
+  <h2>Multiplicación de A x B usando Suma</h2>
+  <label for="numeroA">Número 1:</label>
+  <input type="number" id="numeroA" [(ngModel)]="numero1">
+  <br>
+  <label for="numeroB">Número 2:</label>
+  <input type="number" id="numeroB" [(ngModel)]="numero2">
+  <br>
+  <button (click)="multiplicar()">Multiplicar</button>
+  <br>
+  <p>Resultado: {{ resultado }}</p>
+</div>
