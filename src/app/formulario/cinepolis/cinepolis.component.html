@@ -1,1 +1,32 @@
-<div class="image" style="height: 100vh;width: 100vw;" [ngStyle]="{'bac'}"></div>
+<!-- aqui cargo la imagen de fondo -->
+<div class="container-fluid position-absolute">
+      <div class="container ">
+
+<div class="contenedor">
+      <div class="contenedor-izquierda">
+        <h2>Registrar Entradas para el Cine</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="nombre">
+        <label for="cantidadCompradores">Cantidad de Compradores:</label>
+        <input type="number" id="cantidadCompradores" [(ngModel)]="cantidadCompradores">
+        <label for="tarjetaCineca">Tarjeta Cineca:</label>
+        <input type="radio" name="tarjetaCineca" [(ngModel)]="tarjetaCineca" value="si"> Sí
+        <input type="radio" name="tarjetaCineca" [(ngModel)]="tarjetaCineca" value="no"> No
+        <label for="cantidadBoletos">Cantidad de Boletos:</label>
+        <input type="number" id="cantidadBoletos" [(ngModel)]="cantidadBoletos">
+        </div>
+      <div class="contenedor-abajo">
+        <h2>Salidas</h2>
+        <label for="volverAPagar">¿Volver a Pagar?:</label>
+        <select id="volverAPagar" [(ngModel)]="volverAPagar">
+          <option value="si">Sí</option>
+          <option value="no">No</option>
+        </select>
+      </div>
+      
+      <div class="contenedor-derecha">
+        <h2>Acciones</h2>
+        <button (click)="procesarEntrada()">Procesar</button>
+        <button (click)="salir()">Salir</button>
+      </div>
+    </div>

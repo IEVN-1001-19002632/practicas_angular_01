@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import{MatInputModule} from '@angular/material/input';
 import{MatButtonModule} from '@angular/material/button';
 
+
 import { AppComponent } from './app.component';
 import { MultiplicacionComponent} from './formularios/multiplicacionaxb/multiplicacionaxb.component';
 import { GradosComponent } from './formulario/grados/grados.component';
@@ -23,6 +24,7 @@ import { CinepolisComponent } from './formulario/cinepolis/cinepolis.component';
   imports: [
     BrowserModule,
     FormsModule,
+    
    
   ],
   providers: [],
