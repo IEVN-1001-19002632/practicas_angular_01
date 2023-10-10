@@ -10,11 +10,18 @@ export class CinepolisComponent {
   nombre: string = "";
   tarjetaCineca: string = "";
   cantidadBoletos: number = 0;
-  volverAPagar: string = "no";
+  valorAPagar: number = 0;
+  si: string="";
+  no:string="";
+
+
+  Compra(){
+    
+  }
 
   procesarEntrada() {
     this.cantidadCompradores = parseInt(("Digite La Cantidad De compradores"));
-    if (this.cantidadCompradores <= 0 || isNaN(this.cantidadCompradores)) {
+    if (this.cantidadCompradores <= 1|| isNaN(this.cantidadCompradores)) {
       alert("La cantidad de compradores debe ser un número mayor que cero.");
       return;
     }
@@ -28,23 +35,41 @@ export class CinepolisComponent {
 
   calcularValorPagar() {
     let valorPagar = 0;
+    if((this.cantidadBoletos/this.cantidadCompradores)>7){
+      alert("La cantidad de boletos no debe ser mayor a 7 por comprador");
+        }
 
-    if (this.cantidadBoletos > 5) {
-      valorPagar = (1 - 15 / 100) * this.cantidadBoletos * 12000;
-    } else if (this.cantidadBoletos >= 3) {
-      valorPagar = (1 - 10 / 100) * this.cantidadBoletos * 12000;
-    } else {
-      valorPagar = this.cantidadBoletos * 12000;
+      else {
+        if (this.cantidadBoletos > 5) {
+      valorPagar = (.85) * this.cantidadBoletos * 12;
     }
-
+    if (this.cantidadBoletos >2 && this.cantidadBoletos<6) {
+      valorPagar = (.90) * this.cantidadBoletos * 12;
+    }
+    if (this.cantidadBoletos == 1 || this.cantidadBoletos == 2){
+      valorPagar = this.cantidadBoletos * 12;
+    }
+    if (this.si){
+      valorPagar = valorPagar * .90
+    }
+    if (this.no){
+      valorPagar = valorPagar
+    }
+    
+    }
     alert(`Nombre del Comprador: ${this.nombre}\nValor a Pagar: $${valorPagar.toFixed(2)}`);
-  }
+    
+      }
+
+    
+   
+  
 
   salir() {
     this.cantidadCompradores = 0;
     this.nombre = "";
     this.tarjetaCineca = "";
     this.cantidadBoletos = 0;
-    this.volverAPagar = "no";
+    this.valorAPagar = 0;
   }
 }
